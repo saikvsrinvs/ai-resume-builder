@@ -2,6 +2,12 @@
 
 AI-powered resume builder with ATS analysis, real-time preview, and intelligent content generation.
 
+## Preview
+![App Screenshot](screenshot.png)
+
+
+
+
 ## Tech Stack
 - Python (Flask)
 - JavaScript
