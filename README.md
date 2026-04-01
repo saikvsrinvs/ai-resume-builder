@@ -20,6 +20,15 @@ AI-powered resume builder with ATS analysis, real-time preview, and intelligent 
 - Clean PDF export
 - Typing animation for AI responses
 
+## How It Works
+1. User enters personal details, skills, and projects.
+2. Gemini API generates professional summary and project descriptions.
+3. ATS checker compares resume content with job description keywords.
+4. Resume preview updates in real time.
+5. User downloads the final resume as a PDF.
+
+
+
 ## Run
 
 ### Mac/Linux
