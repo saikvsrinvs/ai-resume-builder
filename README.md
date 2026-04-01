@@ -1,13 +1,21 @@
-# Resume Builder
+# AI Resume Builder with ATS Checker
 
-Simple Flask-based resume builder with:
-- live preview
-- AI-assisted summary generation
-- AI-assisted project bullet generation
-- ATS keyword analysis
-- multiple projects with edit and delete support
-- PDF download
-- typing animation for AI output
+AI-powered resume builder with ATS analysis, real-time preview, and intelligent content generation.
+
+## Tech Stack
+- Python (Flask)
+- JavaScript
+- HTML, CSS
+- Gemini API (AI integration)
+
+## Features
+- Real-time resume preview
+- AI-generated professional summary
+- AI-generated project descriptions
+- ATS keyword analysis with score
+- Add, edit, and delete multiple projects
+- Clean PDF export
+- Typing animation for AI responses
 
 ## Run
 
@@ -17,6 +25,3 @@ source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 python3 app.py
-```
-
-Open `http://127.0.0.1:5001`
