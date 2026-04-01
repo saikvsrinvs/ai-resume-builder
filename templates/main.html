@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <div class="builder-layout">
+      <section class="form-panel">
+        <h1 class="panel-title">Resume Builder</h1>
+        <p class="panel-subtitle">Fill your details and preview the resume on the right.</p>
+
+        <div class="form-card">
+          <h2>Basic Details</h2>
+          <div class="grid-two">
+            <input id="fullName" type="text" placeholder="Full Name">
+            <input id="targetRole" type="text" placeholder="Target Role">
+          </div>
+
+          <div class="grid-two">
+            <input id="phone" type="text" placeholder="Phone">
+            <input id="email" type="email" placeholder="Email">
+          </div>
+
+          <div class="grid-two">
+            <input id="linkedin" type="text" placeholder="LinkedIn">
+            <input id="github" type="text" placeholder="GitHub">
+          </div>
+
+          <textarea id="address" rows="2" placeholder="Address"></textarea>
+        </div>
+
+        <div class="form-card">
+          <div class="section-head">
+            <h2>Summary</h2>
+            <button type="button" id="generateObjectiveBtn" class="btn small">Generate with AI</button>
+          </div>
+          <textarea id="objective" rows="4" placeholder="Write a short professional summary"></textarea>
+          <p class="status" id="statusObjective"></p>
+        </div>
+
+        <div class="form-card">
+          <h2>Skills</h2>
+          <textarea id="skills" rows="4" placeholder="Python, Flask, HTML, CSS, JavaScript, SQL"></textarea>
+        </div>
+
+        <div class="form-card">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <button type="button" id="generateProjectBtn" class="btn small">Generate with AI</button>
+          </div>
+
+          <input id="projectName" type="text" placeholder="Project Name">
+          <input id="projectTech" type="text" placeholder="Tech Stack">
+          <textarea id="projectPurpose" rows="3" placeholder="What does the project do?"></textarea>
+          <textarea id="projectDescription" rows="6" placeholder="Project bullet points"></textarea>
+
+          <div class="button-row">
+            <button type="button" id="addProjectBtn" class="btn">Add Project</button>
+            <button type="button" id="clearProjectBtn" class="btn secondary">Clear Project Fields</button>
+          </div>
+          <p class="status" id="statusProject"></p>
+
+          <div class="saved-projects">
+            <h3>Saved Projects</h3>
+            <div id="savedProjectsList" class="saved-projects-list"></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2>Experience</h2>
+          <textarea id="experience" rows="4" placeholder="Write your experience or practical work"></textarea>
+        </div>
+
+        <div class="form-card">
+          <h2>Certifications</h2>
+          <textarea id="certifications" rows="3" placeholder="Certifications separated by commas or new lines"></textarea>
+        </div>
+
+        <div class="form-card">
+          <h2>Education</h2>
+          <textarea id="education" rows="4" placeholder="Education details"></textarea>
+        </div>
+
+        <div class="form-card">
+          <h2>ATS Checker</h2>
+          <textarea id="jobDescription" rows="5" placeholder="Paste job description here"></textarea>
+          <button type="button" id="analyzeAtsBtn" class="btn">Analyze ATS</button>
+          <p class="status" id="statusATS"></p>
+
+          <div class="ats-results">
+            <p><strong>ATS Score:</strong> <span id="atsScore">0%</span></p>
+            <p><strong>Matched Keywords:</strong></p>
+            <div id="matchedKeywords" class="pill-box"></div>
+            <p><strong>Missing Keywords:</strong></p>
+            <div id="missingKeywords" class="pill-box"></div>
+            <p id="atsSuggestion" class="ats-suggestion"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-panel">
+        <div class="preview-toolbar">
+          <span>Resume Preview</span>
+          <button type="button" class="btn small pdf-btn">Download PDF</button>
+        </div>
+
+        <div class="resume-sheet" id="resumeTextSource">
+          <header class="resume-header center-header">
+            <h1 id="previewName">Your Name</h1>
+            <h2 id="previewRole">Target Role</h2>
+            <p id="previewContact">Phone | Email | LinkedIn | GitHub</p>
+            <p id="previewAddress" class="preview-address"></p>
+          </header>
+
+          <section class="resume-section">
+            <h3>Summary</h3>
+            <p id="previewObjective">Your summary will appear here.</p>
+          </section>
+
+          <section class="resume-section">
+            <h3>Skills</h3>
+            <p id="previewSkills" class="compact-text">Your skills will appear here.</p>
+          </section>
+
+          <section class="resume-section">
+            <h3>Projects</h3>
+            <div id="previewProjects">
+              <div class="empty-note">Add your projects to show them here.</div>
+            </div>
+          </section>
+
+          <section class="resume-section">
+            <h3>Experience</h3>
+            <p id="previewExperience">Your experience will appear here.</p>
+          </section>
+
+          <section class="resume-section">
+            <h3>Certifications</h3>
+            <p id="previewCertifications" class="compact-text">Your certifications will appear here.</p>
+          </section>
+
+          <section class="resume-section">
+            <h3>Education</h3>
+            <p id="previewEducation">Your education will appear here.</p>
+          </section>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='pdf.js') }}"></script>
+</body>
+</html>
