@@ -5,9 +5,6 @@ AI-powered resume builder with ATS analysis, real-time preview, and intelligent 
 ## Preview
 ![App Screenshot](screenshot.png)
 
-
-
-
 ## Tech Stack
 - Python (Flask)
 - JavaScript
@@ -25,9 +22,20 @@ AI-powered resume builder with ATS analysis, real-time preview, and intelligent 
 
 ## Run
 
+### Mac/Linux
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 python3 app.py
+```
+
+### Windows
+```powershell
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
+python app.py
+```
