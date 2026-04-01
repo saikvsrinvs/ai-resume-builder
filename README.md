@@ -39,3 +39,18 @@ pip install -r requirements.txt
 copy .env.example .env
 python app.py
 ```
+Open http://127.0.0.1:5001
+
+## Environment Setup
+
+Create a `.env` file in the root directory and add:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
+
+## Note
+
+- Do NOT upload your `.env` file to GitHub
+- Use `.env.example` as a reference
+- Keep your API key private
